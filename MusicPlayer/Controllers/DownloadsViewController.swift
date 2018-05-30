@@ -23,6 +23,7 @@ class DownloadsViewController: UIViewController
     var selectedSongIndex: Int = 0
     
     var timer: Timer?
+    var shuffleModeActive: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,9 @@ class DownloadsViewController: UIViewController
     
     func playCurrentSong() {
         if songs.count > 0  {
+            if selectedSongIndex >= songs.count {
+                return
+            }
             let song = songs[selectedSongIndex]
             guard let name = song["name"] else {return}
             guard let urlPath = song["url"] else {return}
@@ -102,6 +106,19 @@ class DownloadsViewController: UIViewController
         playerView.slider.value = 0.0
     }
     
+    func randomPlay() {
+        initSmartPlayerViewValues()
+        var randomSongIndex = Int(arc4random()) % songs.count
+        
+        while(randomSongIndex == selectedSongIndex && songs.count > 1) {
+            randomSongIndex = Int(arc4random()) % songs.count
+        }
+        selectedSongIndex = randomSongIndex
+        let indexPath = IndexPath(row: selectedSongIndex, section: 0)
+        tableView.selectRow(at: indexPath, animated: false, scrollPosition: .middle)
+        playCurrentSong()
+    }
+    
     func getPreviousSongIndex() -> Int {
         var previousSongIndex = songs.count - 1
         
@@ -141,6 +158,17 @@ class DownloadsViewController: UIViewController
 //            }
 //        }
 //    }
+    @IBAction func shuffleAction(_ sender: Any) {
+        guard let shuffle = sender as? UIBarButtonItem else {return}
+        
+        if shuffleModeActive == true {
+            shuffleModeActive = false
+            shuffle.tintColor = Constants.shuffleButtonDisabledColor
+        } else {
+            shuffleModeActive = true
+            shuffle.tintColor = Constants.shuffleButtonEnabledColor
+        }
+    }
 }
 
 extension DownloadsViewController: UITableViewDataSource {
@@ -219,6 +247,11 @@ extension DownloadsViewController: PlayerDelegate {
     
     func didFinishPlaying() {
         initSmartPlayerViewValues()
-        fastforward()
+        
+        if shuffleModeActive == false {
+            fastforward()
+        } else {
+            randomPlay()
+        }
     }
 }

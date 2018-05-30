@@ -84,7 +84,14 @@
                             <constraint firstItem="elz-Th-bmr" firstAttribute="leading" secondItem="eSR-8A-bX8" secondAttribute="leading" id="pE6-Tk-ltI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="sXw-9r-JUc"/>
+                    <navigationItem key="navigationItem" id="sXw-9r-JUc">
+                        <barButtonItem key="rightBarButtonItem" image="shuffle" id="mB8-ca-bBY">
+                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="shuffleAction:" destination="td3-Wi-X9l" id="1u7-C1-ha6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="playerView" destination="mY8-T0-pfb" id="U2f-PV-j2b"/>
                         <outlet property="tableView" destination="elz-Th-bmr" id="Ahb-Ma-U6a"/>
@@ -232,4 +239,7 @@
             <point key="canvasLocation" x="-143.19999999999999" y="455.62218890554726"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="shuffle" width="21" height="21"/>
+    </resources>
 </document>

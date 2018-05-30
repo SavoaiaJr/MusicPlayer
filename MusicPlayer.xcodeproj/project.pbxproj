@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A9B0B5720BD958800DFA265 /* SmartPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B0B5620BD958800DFA265 /* SmartPlayerView.swift */; };
 		4A9B0B5920BD959D00DFA265 /* SmartPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A9B0B5820BD959D00DFA265 /* SmartPlayerView.xib */; };
+		4AF5B88620BE791D003EDBAB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF5B88520BE791D003EDBAB /* Constants.swift */; };
 		4AF6709E20B2BAAF00423245 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6709D20B2BAAF00423245 /* PlayerView.swift */; };
 		4AF670A020B2BACB00423245 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AF6709F20B2BACB00423245 /* PlayerView.xib */; };
 		696E3E7320AF5DB3004A796A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E3E7220AF5DB3004A796A /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		4A9B0B5620BD958800DFA265 /* SmartPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPlayerView.swift; sourceTree = "<group>"; };
 		4A9B0B5820BD959D00DFA265 /* SmartPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmartPlayerView.xib; sourceTree = "<group>"; };
+		4AF5B88520BE791D003EDBAB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4AF6709D20B2BAAF00423245 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		4AF6709F20B2BACB00423245 /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		696E3E6F20AF5DB3004A796A /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 				4AF6709A20B2B9F300423245 /* Managers */,
 				4AF6709B20B2BA3500423245 /* Resources */,
 				696E3E7E20AF5DB3004A796A /* Info.plist */,
+				4AF5B88520BE791D003EDBAB /* Constants.swift */,
 			);
 			path = MusicPlayer;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				696E3E9520B05371004A796A /* DownloadsViewController.swift in Sources */,
 				4AF6709E20B2BAAF00423245 /* PlayerView.swift in Sources */,
 				696E3E8920AF7CDD004A796A /* YoutubeVideo.swift in Sources */,
+				4AF5B88620BE791D003EDBAB /* Constants.swift in Sources */,
 				696E3E9720B05573004A796A /* Player.swift in Sources */,
 				4A9B0B5720BD958800DFA265 /* SmartPlayerView.swift in Sources */,
 				696E3E9320B047B2004A796A /* SongsManager.swift in Sources */,
