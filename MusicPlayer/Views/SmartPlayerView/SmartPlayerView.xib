@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SmartPlayerView" customModule="MusicPlayer" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="So0-2j-0So"/>
+                <outlet property="currentTimeLabel" destination="ijb-bk-SGo" id="5mm-Hr-VfJ"/>
+                <outlet property="slider" destination="fJy-CM-rAa" id="egn-kB-vVn"/>
+                <outlet property="songLabel" destination="wux-fC-kWi" id="poc-ZO-r8x"/>
+                <outlet property="totalTimeLabel" destination="pyM-Rw-jNb" id="bA1-Bf-XfQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="486" height="350"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wux-fC-kWi">
+                    <rect key="frame" x="0.0" y="0.0" width="486" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="GcA-96-Ovw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgN-AV-BO6">
+                    <rect key="frame" x="0.0" y="33" width="486" height="241"/>
+                    <items>
+                        <barButtonItem systemItem="rewind" id="ne6-am-GHz">
+                            <color key="tintColor" red="0.85288804770000004" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="rewind:" destination="-1" id="iQw-3i-8xX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="5IG-PH-mnR"/>
+                        <barButtonItem systemItem="play" id="SMZ-Yx-IHT">
+                            <color key="tintColor" red="0.85288804770000004" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="play:" destination="-1" id="XFL-h0-2WX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="q6K-Fl-t18"/>
+                        <barButtonItem systemItem="fastForward" id="99T-J7-PTa">
+                            <color key="tintColor" red="0.85288804770000004" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="fastforward:" destination="-1" id="5Cc-9v-2nO"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fJy-CM-rAa">
+                    <rect key="frame" x="-2" y="274" width="490" height="51"/>
+                    <color key="tintColor" red="0.85288804770000004" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Gty-jq-0SQ"/>
+                    </constraints>
+                    <connections>
+                        <action selector="sliderValueChanged:" destination="-1" eventType="valueChanged" id="vkp-ib-ree"/>
+                    </connections>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijb-bk-SGo">
+                    <rect key="frame" x="5" y="329" width="46" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99:99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyM-Rw-jNb">
+                    <rect key="frame" x="434" y="329" width="47" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fJy-CM-rAa" firstAttribute="top" secondItem="PgN-AV-BO6" secondAttribute="bottom" id="6C1-9j-Ojs"/>
+                <constraint firstItem="wux-fC-kWi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="A69-GJ-dHf"/>
+                <constraint firstItem="PgN-AV-BO6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Mmq-uE-JUH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ijb-bk-SGo" secondAttribute="bottom" id="Rzh-yx-let"/>
+                <constraint firstItem="wux-fC-kWi" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="XmU-gJ-fZI"/>
+                <constraint firstAttribute="trailing" secondItem="pyM-Rw-jNb" secondAttribute="trailing" constant="5" id="euW-Sd-gz5"/>
+                <constraint firstItem="ijb-bk-SGo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="exe-Gd-wi3"/>
+                <constraint firstItem="PgN-AV-BO6" firstAttribute="top" secondItem="wux-fC-kWi" secondAttribute="bottom" id="fKx-Q4-eag"/>
+                <constraint firstItem="wux-fC-kWi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lb4-hy-aFk"/>
+                <constraint firstItem="ijb-bk-SGo" firstAttribute="top" secondItem="fJy-CM-rAa" secondAttribute="bottom" constant="5" id="oRf-i1-Gp4"/>
+                <constraint firstItem="PgN-AV-BO6" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="rCB-HI-BMH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fJy-CM-rAa" secondAttribute="trailing" id="vUM-Pe-eFt"/>
+                <constraint firstItem="fJy-CM-rAa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yEs-gM-8XX"/>
+                <constraint firstItem="pyM-Rw-jNb" firstAttribute="top" secondItem="fJy-CM-rAa" secondAttribute="bottom" constant="5" id="zKW-6T-1Ll"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="35" y="-48"/>
+        </view>
+    </objects>
+</document>

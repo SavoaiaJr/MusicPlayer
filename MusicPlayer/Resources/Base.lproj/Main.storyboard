@@ -58,24 +58,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="elz-Th-bmr">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="404"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="td3-Wi-X9l" id="Coa-8h-uIl"/>
                                     <outlet property="delegate" destination="td3-Wi-X9l" id="Jc3-Pa-hFL"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mY8-T0-pfb" customClass="SmartPlayerView" customModule="MusicPlayer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="468" width="375" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="HIh-Rm-Cga"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mY8-T0-pfb" secondAttribute="trailing" id="BZB-KI-nGO"/>
+                            <constraint firstItem="mY8-T0-pfb" firstAttribute="leading" secondItem="eSR-8A-bX8" secondAttribute="leading" id="CNc-0U-eMx"/>
                             <constraint firstAttribute="trailing" secondItem="elz-Th-bmr" secondAttribute="trailing" id="RtP-jO-thM"/>
-                            <constraint firstItem="KR7-k5-ocl" firstAttribute="top" secondItem="elz-Th-bmr" secondAttribute="bottom" id="k89-lU-oTW"/>
                             <constraint firstItem="elz-Th-bmr" firstAttribute="top" secondItem="QNN-E9-6r0" secondAttribute="bottom" id="lFL-hE-YfI"/>
+                            <constraint firstItem="mY8-T0-pfb" firstAttribute="top" secondItem="elz-Th-bmr" secondAttribute="bottom" id="lgV-4W-deP"/>
+                            <constraint firstItem="KR7-k5-ocl" firstAttribute="top" secondItem="mY8-T0-pfb" secondAttribute="bottom" id="lqh-lz-Ypv"/>
                             <constraint firstItem="elz-Th-bmr" firstAttribute="leading" secondItem="eSR-8A-bX8" secondAttribute="leading" id="pE6-Tk-ltI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sXw-9r-JUc"/>
                     <connections>
+                        <outlet property="playerView" destination="mY8-T0-pfb" id="U2f-PV-j2b"/>
                         <outlet property="tableView" destination="elz-Th-bmr" id="Ahb-Ma-U6a"/>
                     </connections>
                 </viewController>
@@ -99,7 +110,7 @@
                                 <rect key="frame" x="5" y="69" width="365" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <outlet property="delegate" destination="Dyt-lZ-7Px" id="7be-s1-PCF"/>
                                 </connections>
@@ -119,6 +130,20 @@
                                     <outlet property="delegate" destination="Dyt-lZ-7Px" id="mbK-Og-dNB"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4wD-sa-7Ku">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="O47-qv-0rn">
+                                        <rect key="frame" x="169" y="283" width="37" height="37"/>
+                                        <color key="color" red="0.85288804770000004" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="O47-qv-0rn" firstAttribute="centerX" secondItem="4wD-sa-7Ku" secondAttribute="centerX" id="j4L-yk-6Jk"/>
+                                    <constraint firstItem="O47-qv-0rn" firstAttribute="centerY" secondItem="4wD-sa-7Ku" secondAttribute="centerY" id="pbH-FV-dRR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -126,9 +151,13 @@
                             <constraint firstAttribute="trailing" secondItem="8FP-4N-OMU" secondAttribute="trailing" id="2pP-ed-Baz"/>
                             <constraint firstAttribute="trailing" secondItem="WqK-Wg-1a4" secondAttribute="trailing" constant="5" id="8BO-Vg-daM"/>
                             <constraint firstAttribute="trailing" secondItem="4fj-C7-VaY" secondAttribute="trailing" constant="5" id="9Je-R0-nHv"/>
+                            <constraint firstAttribute="trailing" secondItem="4wD-sa-7Ku" secondAttribute="trailing" id="9tB-uF-2sE"/>
+                            <constraint firstAttribute="bottom" secondItem="4wD-sa-7Ku" secondAttribute="bottom" id="CQ7-yU-3eI"/>
                             <constraint firstItem="8FP-4N-OMU" firstAttribute="top" secondItem="4fj-C7-VaY" secondAttribute="bottom" constant="20" id="Kec-jt-sUo"/>
+                            <constraint firstItem="4wD-sa-7Ku" firstAttribute="top" secondItem="Egz-I2-vd6" secondAttribute="bottom" id="LmE-i8-5Yg"/>
                             <constraint firstItem="N1Z-Hr-Kxc" firstAttribute="top" secondItem="8FP-4N-OMU" secondAttribute="bottom" id="OM2-kw-8NC"/>
                             <constraint firstItem="WqK-Wg-1a4" firstAttribute="top" secondItem="Egz-I2-vd6" secondAttribute="bottom" constant="5" id="ZPn-3A-2KC"/>
+                            <constraint firstItem="4wD-sa-7Ku" firstAttribute="leading" secondItem="qfG-sJ-Ixv" secondAttribute="leading" id="hfw-Cg-xSB"/>
                             <constraint firstItem="8FP-4N-OMU" firstAttribute="leading" secondItem="qfG-sJ-Ixv" secondAttribute="leading" id="kwz-dc-rdM"/>
                             <constraint firstItem="WqK-Wg-1a4" firstAttribute="leading" secondItem="qfG-sJ-Ixv" secondAttribute="leading" constant="5" id="s7L-d3-bpU"/>
                             <constraint firstItem="4fj-C7-VaY" firstAttribute="leading" secondItem="qfG-sJ-Ixv" secondAttribute="leading" constant="5" id="xLQ-zg-dEE"/>
@@ -136,6 +165,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ysw-b6-hSx"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="O47-qv-0rn" id="tnW-C7-KKx"/>
+                        <outlet property="layerView" destination="4wD-sa-7Ku" id="nnw-XT-NP0"/>
                         <outlet property="songNameLabel" destination="WqK-Wg-1a4" id="43c-q0-bIw"/>
                         <outlet property="tableView" destination="8FP-4N-OMU" id="qyw-5z-9xB"/>
                     </connections>

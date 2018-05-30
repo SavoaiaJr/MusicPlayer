@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A9B0B5720BD958800DFA265 /* SmartPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B0B5620BD958800DFA265 /* SmartPlayerView.swift */; };
+		4A9B0B5920BD959D00DFA265 /* SmartPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A9B0B5820BD959D00DFA265 /* SmartPlayerView.xib */; };
+		4AF6709E20B2BAAF00423245 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6709D20B2BAAF00423245 /* PlayerView.swift */; };
+		4AF670A020B2BACB00423245 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AF6709F20B2BACB00423245 /* PlayerView.xib */; };
 		696E3E7320AF5DB3004A796A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E3E7220AF5DB3004A796A /* AppDelegate.swift */; };
 		696E3E7820AF5DB3004A796A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 696E3E7620AF5DB3004A796A /* Main.storyboard */; };
 		696E3E7A20AF5DB3004A796A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 696E3E7920AF5DB3004A796A /* Assets.xcassets */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A9B0B5620BD958800DFA265 /* SmartPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPlayerView.swift; sourceTree = "<group>"; };
+		4A9B0B5820BD959D00DFA265 /* SmartPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmartPlayerView.xib; sourceTree = "<group>"; };
+		4AF6709D20B2BAAF00423245 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		4AF6709F20B2BACB00423245 /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		696E3E6F20AF5DB3004A796A /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		696E3E7220AF5DB3004A796A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		696E3E7720AF5DB3004A796A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,9 +56,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A9B0B5520BD956A00DFA265 /* SmartPlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				4A9B0B5620BD958800DFA265 /* SmartPlayerView.swift */,
+				4A9B0B5820BD959D00DFA265 /* SmartPlayerView.xib */,
+			);
+			path = SmartPlayerView;
+			sourceTree = "<group>";
+		};
 		4AF6709620B2B99300423245 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4A9B0B5520BD956A00DFA265 /* SmartPlayerView */,
+				4AF6709C20B2BA8400423245 /* PlayerView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -92,6 +111,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		4AF6709C20B2BA8400423245 /* PlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				4AF6709D20B2BAAF00423245 /* PlayerView.swift */,
+				4AF6709F20B2BACB00423245 /* PlayerView.xib */,
+			);
+			path = PlayerView;
+			sourceTree = "<group>";
+		};
+		4AF670A120B306E900423245 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		696E3E6620AF5DB3004A796A = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				696E3E7220AF5DB3004A796A /* AppDelegate.swift */,
+				4AF670A120B306E900423245 /* Helpers */,
 				4AF6709720B2B9A000423245 /* Models */,
 				4AF6709920B2B9CB00423245 /* Controllers */,
 				4AF6709620B2B99300423245 /* Views */,
@@ -163,7 +199,7 @@
 				TargetAttributes = {
 					696E3E6E20AF5DB3004A796A = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 2PH6B46VK6;
+						DevelopmentTeam = NJRKBMDHL7;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
@@ -195,6 +231,8 @@
 				696E3E7D20AF5DB3004A796A /* LaunchScreen.storyboard in Resources */,
 				696E3E7A20AF5DB3004A796A /* Assets.xcassets in Resources */,
 				696E3E7820AF5DB3004A796A /* Main.storyboard in Resources */,
+				4A9B0B5920BD959D00DFA265 /* SmartPlayerView.xib in Resources */,
+				4AF670A020B2BACB00423245 /* PlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +246,10 @@
 				696E3E8C20AF8198004A796A /* SearchViewController.swift in Sources */,
 				696E3E8520AF7062004A796A /* RequestManager.swift in Sources */,
 				696E3E9520B05371004A796A /* DownloadsViewController.swift in Sources */,
+				4AF6709E20B2BAAF00423245 /* PlayerView.swift in Sources */,
 				696E3E8920AF7CDD004A796A /* YoutubeVideo.swift in Sources */,
 				696E3E9720B05573004A796A /* Player.swift in Sources */,
+				4A9B0B5720BD958800DFA265 /* SmartPlayerView.swift in Sources */,
 				696E3E9320B047B2004A796A /* SongsManager.swift in Sources */,
 				696E3E7320AF5DB3004A796A /* AppDelegate.swift in Sources */,
 			);
@@ -352,10 +392,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2PH6B46VK6;
+				DEVELOPMENT_TEAM = NJRKBMDHL7;
 				INFOPLIST_FILE = MusicPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.madalinsavoaia.MusicPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.madalinsavoaia.EvMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -366,10 +406,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2PH6B46VK6;
+				DEVELOPMENT_TEAM = NJRKBMDHL7;
 				INFOPLIST_FILE = MusicPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.madalinsavoaia.MusicPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.madalinsavoaia.EvMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;

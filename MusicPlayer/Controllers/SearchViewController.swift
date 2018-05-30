@@ -12,6 +12,8 @@ import AVFoundation
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet weak var layerView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var songNameLabel: UITextField!
     @IBOutlet weak var tableView: UITableView!
     var results: [YoutubeVideo] = []
@@ -45,7 +47,8 @@ class SearchViewController: UIViewController {
     }
     
     func saveMp3Song(url: URL) {
-        
+        layerView.isHidden = false
+        activityIndicator.startAnimating()
         URLSession(configuration: .default).dataTask(with: url, completionHandler: { [weak self] (data, urlResponse, error) in
             guard let weakSelf = self else {return}
             guard let mp3Data = data else {return}
@@ -55,6 +58,9 @@ class SearchViewController: UIViewController {
             
             if succeed == true {
                 print("Descarcare cu succes")
+                DispatchQueue.main.async {
+                    self?.layerView.isHidden = true                    
+                }
             } else {
                 print("Descarcare esuata")
             }
