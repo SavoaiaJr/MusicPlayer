@@ -50,20 +50,29 @@ class DownloadsViewController: UIViewController
             if selectedSongIndex >= songs.count {
                 return
             }
+            let fileManager = FileManager.default
             let song = songs[selectedSongIndex]
             guard let name = song["name"] else {return}
-            guard let urlPath = song["url"] else {return}
-            guard let url = URL(string: urlPath) else {return}
+            guard let uniqueIdentifier = song["uniqueIdentifier"] else {return}
             
-            Player.sharedInstance.stop()
-            Player.sharedInstance.delegate = self
-            let succeed = Player.sharedInstance.play(url: url)
-            
-            if succeed == true {
-                prepareSmartPlayerView(name: name)
-                print("Melodia \(name) este redata cu succes")
-            } else {
-                print("Melodia \(name) nu poate fi redata")
+            do {
+                let documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+                let url = documentDirectory.appendingPathComponent(uniqueIdentifier)
+                
+                print("Url for \(name) was successfully retrieved.")
+                
+                Player.sharedInstance.stop()
+                Player.sharedInstance.delegate = self
+                let succeed = Player.sharedInstance.play(url: url)
+                
+                if succeed == true {
+                    prepareSmartPlayerView(name: name)
+                    print("\(name) has been successfully played back.")
+                } else {
+                    print("\(name) cannot be played back.")
+                }
+            } catch {
+                print("Error -> \(error)")
             }
         }
     }

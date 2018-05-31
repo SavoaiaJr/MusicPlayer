@@ -46,7 +46,7 @@ class SearchViewController: UIViewController {
         currentYoutubeVideo = youtubeVideo
     }
     
-    func saveMp3Song(url: URL) {
+    func downloadAndSaveMp3Song(url: URL) {
         layerView.isHidden = false
         activityIndicator.startAnimating()
         URLSession(configuration: .default).dataTask(with: url, completionHandler: { [weak self] (data, urlResponse, error) in
@@ -57,15 +57,13 @@ class SearchViewController: UIViewController {
             let succeed = SongsManager.sharedInstance.saveSong(data: mp3Data, youtubeVideo: youtubeVideo)
             
             if succeed == true {
-                print("Descarcare cu succes")
+                print("The song downloading and saving succeed.")
                 DispatchQueue.main.async {
                     self?.layerView.isHidden = true                    
                 }
             } else {
-                print("Descarcare esuata")
+                print("The song downloading and saving was failed.")
             }
-            
-            
             
         }).resume()
     }
@@ -117,7 +115,7 @@ extension SearchViewController: UIWebViewDelegate {
         switch navigationType {
         case .linkClicked:
             guard let url = request.mainDocumentURL else {return true}
-            saveMp3Song(url: url)
+            downloadAndSaveMp3Song(url: url)
             print(url)
             webView.isHidden = true
             return false

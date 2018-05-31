@@ -20,13 +20,18 @@ class SongsManager: NSObject {
         var music = userDefaults.array(forKey: SongsManager.musicArrayKey) ?? []
         do {
             let documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            let songUrl = documentDirectory.appendingPathComponent(youtubeVideo.name)
+            // compute an unique identifier for song
+            let timeStamp = Date().timeIntervalSince1970
+            let uniqueIdentifier = String(describing: timeStamp) + youtubeVideo.name
+            
+            // save file on disk
+            let songUrl = documentDirectory.appendingPathComponent(uniqueIdentifier)
             try data.write(to: songUrl)
             
             // create music dictionary object
             var musicDictionary = Dictionary<String, String>()
             musicDictionary.updateValue(youtubeVideo.name, forKey: "name")
-            musicDictionary.updateValue(songUrl.absoluteString, forKey: "url")
+            musicDictionary.updateValue(uniqueIdentifier, forKey: "uniqueIdentifier")
             
             // save music dictionary to music array from user defaults to keep the references to mp3s
             
@@ -47,12 +52,13 @@ class SongsManager: NSObject {
         
         var songs = getAllSongs()
         let song = songs[index]
-    
+        
         guard let name = song["name"] else {return}
+        guard let uniqueIdentifier = song["uniqueIdentifier"] else {return}
         
         do {
             let documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            let songUrl = documentDirectory.appendingPathComponent(name)
+            let songUrl = documentDirectory.appendingPathComponent(uniqueIdentifier)
             
             try fileManager.removeItem(at: songUrl)
             print("\(name) was successfully removed.")
