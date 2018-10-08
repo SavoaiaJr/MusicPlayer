@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A99CA62216A8CF30054C8E5 /* OperationFetchYoutubeVideosList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A99CA61216A8CF30054C8E5 /* OperationFetchYoutubeVideosList.swift */; };
+		4A99CA69216A90E10054C8E5 /* NetworkOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A99CA68216A90E10054C8E5 /* NetworkOperationQueue.swift */; };
 		4A9B0B5720BD958800DFA265 /* SmartPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B0B5620BD958800DFA265 /* SmartPlayerView.swift */; };
 		4A9B0B5920BD959D00DFA265 /* SmartPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A9B0B5820BD959D00DFA265 /* SmartPlayerView.xib */; };
 		4AF5B88620BE791D003EDBAB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF5B88520BE791D003EDBAB /* Constants.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A99CA61216A8CF30054C8E5 /* OperationFetchYoutubeVideosList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationFetchYoutubeVideosList.swift; sourceTree = "<group>"; };
+		4A99CA68216A90E10054C8E5 /* NetworkOperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperationQueue.swift; sourceTree = "<group>"; };
 		4A9B0B5620BD958800DFA265 /* SmartPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPlayerView.swift; sourceTree = "<group>"; };
 		4A9B0B5820BD959D00DFA265 /* SmartPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmartPlayerView.xib; sourceTree = "<group>"; };
 		4AF5B88520BE791D003EDBAB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -58,6 +62,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A99CA63216A8CFE0054C8E5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4A99CA68216A90E10054C8E5 /* NetworkOperationQueue.swift */,
+				4A99CA64216A8D050054C8E5 /* Operations */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4A99CA64216A8D050054C8E5 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				4A99CA65216A8D100054C8E5 /* FetchYoutubeVideosList */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		4A99CA65216A8D100054C8E5 /* FetchYoutubeVideosList */ = {
+			isa = PBXGroup;
+			children = (
+				4A99CA61216A8CF30054C8E5 /* OperationFetchYoutubeVideosList.swift */,
+			);
+			path = FetchYoutubeVideosList;
+			sourceTree = "<group>";
+		};
 		4A9B0B5520BD956A00DFA265 /* SmartPlayerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,13 +151,6 @@
 			path = PlayerView;
 			sourceTree = "<group>";
 		};
-		4AF670A120B306E900423245 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		696E3E6620AF5DB3004A796A = {
 			isa = PBXGroup;
 			children = (
@@ -149,8 +171,8 @@
 		696E3E7120AF5DB3004A796A /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				4A99CA63216A8CFE0054C8E5 /* Network */,
 				696E3E7220AF5DB3004A796A /* AppDelegate.swift */,
-				4AF670A120B306E900423245 /* Helpers */,
 				4AF6709720B2B9A000423245 /* Models */,
 				4AF6709920B2B9CB00423245 /* Controllers */,
 				4AF6709620B2B99300423245 /* Views */,
@@ -248,12 +270,14 @@
 			files = (
 				696E3E8C20AF8198004A796A /* SearchViewController.swift in Sources */,
 				696E3E8520AF7062004A796A /* RequestManager.swift in Sources */,
+				4A99CA69216A90E10054C8E5 /* NetworkOperationQueue.swift in Sources */,
 				696E3E9520B05371004A796A /* DownloadsViewController.swift in Sources */,
 				4AF6709E20B2BAAF00423245 /* PlayerView.swift in Sources */,
 				696E3E8920AF7CDD004A796A /* YoutubeVideo.swift in Sources */,
 				4AF5B88620BE791D003EDBAB /* Constants.swift in Sources */,
 				696E3E9720B05573004A796A /* Player.swift in Sources */,
 				4A9B0B5720BD958800DFA265 /* SmartPlayerView.swift in Sources */,
+				4A99CA62216A8CF30054C8E5 /* OperationFetchYoutubeVideosList.swift in Sources */,
 				696E3E9320B047B2004A796A /* SongsManager.swift in Sources */,
 				696E3E7320AF5DB3004A796A /* AppDelegate.swift in Sources */,
 			);

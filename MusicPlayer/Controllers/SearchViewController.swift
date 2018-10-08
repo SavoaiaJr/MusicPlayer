@@ -22,6 +22,8 @@ class SearchViewController: UIViewController {
     
     var currentYoutubeVideo: YoutubeVideo?
     
+    var operation: OperationFetchYoutubeVideosList?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -74,13 +76,12 @@ class SearchViewController: UIViewController {
     @IBAction func searchAction(_ sender: Any) {
         songNameLabel.endEditing(true)
         guard let songName = songNameLabel.text else {return}
-        RequestManager.sharedInstance.getVideosList(title: songName) { [weak self] videos in
-            self?.results.removeAll()
-            self?.results.append(contentsOf: videos)
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
+        
+        operation = OperationFetchYoutubeVideosList()
+        operation?.videoTitle = songName
+        operation?.delegate = self
+        NetworkOperationQueue.shared.addOperation(operation!)
+    
     }
 }
 
@@ -131,5 +132,23 @@ extension SearchViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchAction(self)
         return true
+    }
+}
+
+extension SearchViewController: NetworkOperationProtocol {
+    func didFail(with error: Error) {
+        
+    }
+    
+    func didFinish(with results: [Any]) {
+        guard let videos = results as? [YoutubeVideo] else {
+          return
+        }
+        
+        self.results.removeAll()
+        self.results.append(contentsOf: videos)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
